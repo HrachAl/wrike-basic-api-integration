@@ -5,19 +5,16 @@ import fs from "fs"
 const token = 'eyJ0dCI6InAiLCJhbGciOiJIUzI1NiIsInR2IjoiMSJ9.eyJkIjoie1wiYVwiOjY1Nzc4MzMsXCJpXCI6OTE1OTE5NyxcImNcIjo0Njg3ODA3LFwidVwiOjIwMjA2MDQ3LFwiclwiOlwiVVNcIixcInNcIjpbXCJXXCIsXCJGXCIsXCJJXCIsXCJVXCIsXCJLXCIsXCJDXCIsXCJEXCIsXCJNXCIsXCJBXCIsXCJMXCIsXCJQXCJdLFwielwiOltdLFwidFwiOjB9IiwiaWF0IjoxNzI0MjM5NDgxfQ.TFtObAD3A1thTp_MczlEOIaEM9G9C-ugGl-5sbawiaU'
 const url = 'https://www.wrike.com/api/v4/tasks';
 
-const mapTask = (task) => (
-    {
-        id: task.id,
-        title: task.title,
-        accountId: task.assignee ? task.assignee[0].id : null, // Assuming assignee is an array
-        importance: task.status,
-        parentIds: task.parentIds || [], // Ensure parentIds is an array
-        createdDate: task.createdDate,
-        updatedDate: task.updatedDate,
-        permalink: task.permalink
-    }
-) 
-     
+const mapTask = (task) => ({
+    id: task.id,
+    name: task.title,
+    assignee: task.accountId, 
+    status: task.importance,
+    collections: task.parentIds || [], 
+    created_at: task.createdDate,
+    updated_at: task.updatedDate,
+    ticket_url: task.permalink
+});     
 
 
 fetch(url, {
@@ -31,6 +28,8 @@ fetch(url, {
 .then(  
         data => {
         const tasks = data.data;
+        console.log(tasks);
+        
         const mappedTasks = tasks.map(mapTask); 
         return mappedTasks
         
