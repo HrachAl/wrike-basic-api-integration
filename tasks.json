@@ -100,16 +100,6 @@
     "ticket_url": "https://www.wrike.com/open.htm?id=1476949675"
   },
   {
-    "id": "IEAGIXVJKRMAQ6D5",
-    "name": "Finalize Product Design",
-    "assignee": "IEAGIXVJ",
-    "status": "Normal",
-    "collections": [],
-    "created_at": "2024-08-19T11:01:19Z",
-    "updated_at": "2024-08-19T11:01:29Z",
-    "ticket_url": "https://www.wrike.com/open.htm?id=1476950141"
-  },
-  {
     "id": "IEAGIXVJKRMAQ6G4",
     "name": "Develop Product Website",
     "assignee": "IEAGIXVJ",
@@ -198,5 +188,15 @@
     "created_at": "2024-08-19T10:59:25Z",
     "updated_at": "2024-08-20T07:06:31Z",
     "ticket_url": "https://www.wrike.com/open.htm?id=1476949899"
+  },
+  {
+    "id": "IEAGIXVJKRMAQ6D5",
+    "name": "Finalize Product Design",
+    "assignee": "IEAGIXVJ",
+    "status": "High",
+    "collections": [],
+    "created_at": "2024-08-19T11:01:19Z",
+    "updated_at": "2024-08-26T09:39:23Z",
+    "ticket_url": "https://www.wrike.com/open.htm?id=1476950141"
   }
 ]
