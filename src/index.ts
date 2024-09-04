@@ -30,7 +30,7 @@ type WrikeApiResponse = {
 };
 
 const access_token: string | undefined = process.env.ACCES_TOKEN;
-const url = 'https://www.wrike.com/api/v4/tasks';
+const url:string = 'https://www.wrike.com/api/v4/tasks';
 
 if (!access_token) {
     throw new Error('ACCES_TOKEN not found in .env');
